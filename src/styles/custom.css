@@ -1,0 +1,11 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+a:hover {
+  color: #1d4ed8; /* Example of a custom hover color */
+}
+
+.container {
+  max-width: 1200px; /* Custom width for the container */
+}
