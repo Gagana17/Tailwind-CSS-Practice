@@ -1,27 +1,45 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useState } from "react";
 
-const header = () => {
+const Header = () => {
+  const [activeLink, setActiveLink] = useState(null);
+
+  // Links data
+  const links = [
+    { name: "Home", href: "#" },
+    { name: "About", href: "#" },
+    { name: "Sponsorship", href: "#" },
+    { name: "Contact", href: "#" },
+  ];
+
+  // Handle link click to set active link
+  const handleLinkClick = (name) => {
+    setActiveLink(name);
+  };
+
   return (
-    <header className="bg-sky-950 text-sky-200 py-4 shadow">
-      <div className="container mx-auto flex justify-between items-center px-4">
-        <nav className="space-x-6 text-sm">
-          <a href="#" className="hover color: green ">
-            Home
-          </a>
-          <a href="#" className="hover:underline">
-            About
-          </a>
-          <a href="#" className="hover:underline">
-            Sponsorship
-          </a>
-          <a href="#" className="hover:underline">
-            Contact
-          </a>
+    <header className="bg-sky-950 text-white shadow-md">
+      <div className="container mx-auto flex justify-start items-center py-2 px-20">
+        {/* Navigation Links */}
+        <nav className="flex space-x-4">
+          {links.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => handleLinkClick(link.name)}
+              className={`px-2 py-1 rounded ${
+                activeLink === link.name
+                  ? "bg-blue-500 text-white"
+                  : "hover:bg-blue-400 hover:text-white transition-colors duration-300"
+              }`}
+            >
+              {link.name}
+            </a>
+          ))}
         </nav>
       </div>
     </header>
   );
 };
 
-export default header;
+export default Header;
