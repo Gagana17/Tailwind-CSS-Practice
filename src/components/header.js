@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
+import { Twitter, Mail, Rss } from "lucide-react";
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null);
@@ -37,6 +38,28 @@ const Header = () => {
             </a>
           ))}
         </nav>
+
+        {/* Social Media Icons */}
+        <div className="flex space-x-4  ml-auto">
+          <a
+            href="#"
+            className="hover:text-blue-300 transition-colors duration-300"
+          >
+            <Twitter size={20} />
+          </a>
+          <a
+            href="#"
+            className="hover:text-blue-300 transition-colors duration-300"
+          >
+            <Mail size={20} />
+          </a>
+          <a
+            href="#"
+            className="hover:text-blue-300 transition-colors duration-300"
+          >
+            <Rss size={20} />
+          </a>
+        </div>
       </div>
     </header>
   );

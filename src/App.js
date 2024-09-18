@@ -1,23 +1,27 @@
-// src/App.js
 import React from "react";
-import Header from "./components/header";
-import SubMenu from "./components/subMenu";
-import MainContent from "./components/mainContent";
-import Sidebar from "./components/sideBar";
+import Header from "./components/Header";
+import SubMenu from "./components/SubMenu";
+import Sidebar from "./components/Sidebar";
 import LogoBanner from "./components/LogoBanner";
+import Footer from "./components/Footer";
+import "./styles/tailwind.css";
+import MainContent from "./components/MainContent";
 
-function App() {
+const App = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen flex flex-col bg-gray-100">
       <Header />
       <LogoBanner />
       <SubMenu />
-      <div className="container mx-auto mt-8 flex flex-col lg:flex-row px-4">
+
+      <div className="container mx-auto flex-grow flex mt-8">
         <MainContent />
+
         <Sidebar />
       </div>
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
